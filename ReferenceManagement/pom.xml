@@ -2,7 +2,7 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.ctrip.smarttrip.tools</groupId>
-  <artifactId>ReferenceManagement</artifactId>
+  <artifactId>tools-refmgr</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>ReferenceManagement Maven Webapp</name>
@@ -47,21 +47,18 @@
       <version>${springframework.version}</version>
     </dependency>
   </dependencies>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>nexus</id>
-      <name>nexus plugin repository</name>
-      <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </pluginRepository>
-  </pluginRepositories>
+  <repositories>
+    <repository>
+        <id>nexus-releases</id>
+        <name>ctrip repository</name>
+        <url>http://maven.dev.sh.ctripcorp.com:8081/nexus/content/repositories/fxrelease</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+    </repository>
+  </repositories>
   <build>
-    <finalName>ReferenceManagement</finalName>
+    <finalName>tools-refmgr</finalName>
     <plugins>
         <plugin>
             <groupId>org.eclipse.jetty</groupId>
